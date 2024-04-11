@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "test-pwa",
-  "short_name": "test-pwa",
+  "name": "next-pwa",
+  "short_name": "next-pwa",
   "icons": [
     {
       "src": "/icon-192x192.png",
