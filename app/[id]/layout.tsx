@@ -1,13 +1,19 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import React from 'react';
-import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  const startUrl = `${baseUrl}api/manifest?start_url=`;
+  const startPath = params.id || '';
+  const startUrl = `${baseUrl}api/manifest?start_url=${startPath}`;
 
   return {
     title: 'Next.js PWA Template',
